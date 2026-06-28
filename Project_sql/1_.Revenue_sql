@@ -1,0 +1,38 @@
+--Tổng doanh thu theo từng món 
+--
+SELECT 
+    it.item_id,
+    it.item_name as Ten_Mon, 
+    SUM(it.item_price* od.quantity) as Doanh_Thu
+FROM 
+    orders od
+INNER JOIN items it ON od.item_id = it.item_id
+GROUP BY  
+    it.item_id, it.item_name
+ORDER BY 
+    Doanh_Thu DESC
+
+--Xếp hạng món theo doanh thu trong từng category
+--
+WITH Tong_Doanh_Thu_Tung_Mon AS (
+    SELECT 
+        it.item_cat AS Category,
+        it.item_id,
+        it.item_name as Ten_Mon, 
+        SUM(it.item_price* od.quantity) as Doanh_Thu
+    FROM 
+        orders od
+    INNER JOIN items it ON od.item_id = it.item_id
+    GROUP BY  
+        Category, it.item_id, it.item_name
+)
+SELECT 
+    Category,
+    Ten_Mon,
+    DENSE_RANK() OVER(
+        PARTITION BY Category
+        ORDER BY Doanh_Thu DESC ) AS Xep_Hang_Cat
+FROM 
+    Tong_Doanh_Thu_Tung_Mon
+ORDER BY 
+    Category, Xep_Hang_Cat;
