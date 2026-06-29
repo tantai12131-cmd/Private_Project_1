@@ -1,4 +1,3 @@
-
 --Create FK: items.sku = recipes.recipe_id
 --
 ALTER TABLE items
