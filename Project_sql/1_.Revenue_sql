@@ -18,17 +18,19 @@ WITH Tong_Doanh_Thu_Tung_Mon AS (
     SELECT 
         it.item_cat AS Category,
         it.item_id,
-        it.item_name as Ten_Mon, 
+        it.item_name AS Ten_Mon, 
+        it.item_size AS Kich_Thuoc,
         SUM(it.item_price* od.quantity) as Doanh_Thu
     FROM 
         orders od
     INNER JOIN items it ON od.item_id = it.item_id
     GROUP BY  
-        Category, it.item_id, it.item_name
+        it.item_cat, it.item_id, it.item_name, it.item_size
 )
 SELECT 
     Category,
     Ten_Mon,
+    Kich_Thuoc,
     DENSE_RANK() OVER(
         PARTITION BY Category
         ORDER BY Doanh_Thu DESC ) AS Xep_Hang_Cat

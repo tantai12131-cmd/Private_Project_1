@@ -8,5 +8,3 @@ ADD CONSTRAINT fk_recipes_items
 FOREIGN KEY (recipe_id)
 REFERENCES items(sku);
 
-
-
