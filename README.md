@@ -42,7 +42,6 @@ Dữ liệu được sử dụng trong dự án này là bộ **Coffee Shop Sale
 - **Microsoft Excel:** Dùng để khám phá và làm sạch dữ liệu thô ban đầu (data cleaning) — xử lý các vấn đề như ký tự ẩn, dữ liệu mồ côi (orphaned records), định dạng sai kiểu dữ liệu, trước khi đưa vào cơ sở dữ liệu.
 - **SQL (PostgreSQL):** Ngôn ngữ truy vấn cốt lõi giúp tôi thiết lập cấu trúc quan hệ giữa các bảng (foreign keys), đồng thời thực hiện các truy vấn phân tích phức tạp — từ JOIN nhiều bảng, window functions (`RANK`, `DENSE_RANK`), đến các phép tính tổng hợp phục vụ việc trả lời các câu hỏi kinh doanh.
 - **VSCode + SQLTools Extension:** Môi trường làm việc chính để viết, kiểm thử và quản lý các câu lệnh SQL kết nối trực tiếp tới PostgreSQL.
-- **Python (Pandas, Matplotlib, Seaborn):** Dùng để xử lý kết quả truy vấn và xây dựng các biểu đồ trực quan hóa chuyên nghiệp, hỗ trợ việc trình bày insight một cách rõ ràng, dễ hiểu.
 - **Git & GitHub:** Dùng để quản lý phiên bản (version control) và đóng gói toàn bộ dự án thành một portfolio có thể chia sẻ công khai.
 
 ## The Analysis
@@ -74,7 +73,7 @@ Trước khi import vào PostgreSQL, dữ liệu thô được làm sạch trự
 
 ### SQL (Data Processing)
 
-Sau khi import vào PostgreSQL, bước đầu tiên là thiết lập lại quan hệ khóa ngoại còn thiếu giữa hai bảng `items` và `recipes` (liên kết qua `sku` ↔ `recipe_id`), để đảm bảo tính toàn vẹn dữ liệu trước khi truy vấn:
+-Sau khi import vào PostgreSQL, bước đầu tiên là thiết lập lại quan hệ khóa ngoại còn thiếu giữa hai bảng `items` và `recipes` (liên kết qua `sku` ↔ `recipe_id`), để đảm bảo tính toàn vẹn dữ liệu trước khi truy vấn:
 
 ```sql
 -- Thiết lập Foreign Key: items.sku = recipes.recipe_id
