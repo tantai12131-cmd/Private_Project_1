@@ -49,9 +49,9 @@ Dữ liệu được sử dụng trong dự án này là bộ **Coffee Shop Sale
 
 ### Excel (Data Cleaning)
 
--**BEFORE**: [coffee_shop_raw](excel_file\coffee_shop_raw.xlsx)
+- **BEFORE:** [coffee_shop_raw](excel_file/coffee_shop_raw.xlsx)
 
--**AFTER**: [CoffeeShop_Clean](excel_file\CoffeeShop_Clean.xlsx)
+- **AFTER:** [coffeeShop_Clean](excel_file/CoffeeShop_Clean.xlsx)
 
 Trước khi import vào PostgreSQL, dữ liệu thô được làm sạch trực tiếp trên Excel với các thao tác chính sau:
 
