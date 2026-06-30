@@ -279,7 +279,7 @@ Từ kết quả các truy vấn SQL trên, một số phát hiện chính:
 - **Margin cao nhưng không đều**: trung bình ~87.5%, trong đó Snacks thấp nhất (~70%) do chi phí nguyên liệu cao hơn (thịt nguội, phô mai). *Espresso* có margin tuyệt đối thấp nhất nhưng tỷ suất lợi nhuận vẫn tốt, nên giữ làm món "mồi" thu hút khách.
 - **Phân ca nhân sự khá cân bằng**: 4 nhân viên đều làm 4–5 ca/người, không ai bị quá tải.
 - **~17% đơn hàng thiếu thông tin in/out** — đây là vấn đề chất lượng dữ liệu đầu vào cần cải thiện ở khâu order, hơn là insight kinh doanh.
-- **Doanh thu lũy kế** cho thấy hiệu ứng 80/20: chỉ vài món "ngôi sao" đầu mỗi category đã đóng góp phần lớn doanh thu của nhóm đó.
+- **Doanh thu lũy kế** cho thấy hiệu ứng 80/20: chỉ vài món đầu mỗi category đã đóng góp phần lớn doanh thu của nhóm đó.
 
 ## Conclusions
 
