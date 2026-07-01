@@ -20,7 +20,9 @@ SELECT
     Category,
     SUM(Doanh_Thu) OVER(
         PARTITION BY Category
-        ORDER BY Doanh_Thu DESC ) AS Luy_Ke_Doanh_Thu_Tung_Mon
+        ORDER BY Doanh_Thu DESC
+        ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW 
+        ) AS Luy_Ke_Doanh_Thu_Tung_Mon
 FROM 
     Tong_Doanh_Thu_Tung_Mon
 ORDER BY 
